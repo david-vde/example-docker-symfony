@@ -1,6 +1,12 @@
 ## Commandes à retenir
 
-### Se connecter a un container avec la console
+### Lancer docker compose
+
+```
+docker-compose up -d --build
+```
+
+### Se connecter à un container avec la console
 
 ```
 docker exec -it <container_name> bash

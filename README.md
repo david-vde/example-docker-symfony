@@ -1,17 +1,21 @@
-## Commandes à retenir
+## Commands
 
-### Lancer docker compose
+### Build and run docker containers
 
 ```
 docker-compose up -d --build
 ```
 
-### Se connecter à un container avec la console
+### Connection to a docker container with bash
+
+Existing containers in this project:
+- php74-container
+- mysql8-container
+- nginx-container
 
 ```
 docker exec -it <container_name> bash
 ```
-
 
 ### Check services
 

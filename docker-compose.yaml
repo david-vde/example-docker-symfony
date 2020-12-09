@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  nginx-php74-mysql8-node:
+  docker-symfony-network:
 
 services:
 
@@ -18,7 +18,7 @@ services:
       - php74-service
       - mysql8-service
     networks:
-      - nginx-php74-mysql8-node
+      - docker-symfony-network
 
   # php
   php74-service:
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./app:/var/www/project
     networks:
-      - nginx-php74-mysql8-node
+      - docker-symfony-network
 
   # mysql
   mysql8-service:
@@ -48,14 +48,4 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_PASSWORD: secret
     networks:
-      - nginx-php74-mysql8-node
-
-  # node
-  node-service:
-    image: node:latest
-    container_name: node-container
-    volumes:
-      - ./app:/var/www/project
-    working_dir: /var/www/project
-    networks:
-      - nginx-php74-mysql8-node
+      - docker-symfony-network
